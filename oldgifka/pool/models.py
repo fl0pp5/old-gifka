@@ -9,4 +9,8 @@ class Post(models.Model):
 
 class Tag(models.Model):
     title = models.CharField(max_length=120)
-    post = models.ForeignKey('Post', on_delete=models.CASCADE)
+
+
+class PostTag(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
